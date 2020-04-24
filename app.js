@@ -25,12 +25,12 @@ app.use('/users', usersRouter);
 
 module.exports = app;
 
-// Database connection
+// Database connection (update with user specific info)
 var mysql = require('mysql');
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
-  password: 'Thesopranos1!',
+  user: 'user',
+  password: 'password',
   database: 'expenses'
 });
 
