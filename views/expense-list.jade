@@ -1,3 +1,4 @@
+//- Expense list page
 doctype html
 html(lang='en')
   head
@@ -22,23 +23,22 @@ html(lang='en')
       padding: 15px;
       }
   body
-    .table-data
-      h2 Expense List
-      ul 
-      table
-        thead
-            tr
-                th Name
-                th Cost
-                th Category
-                th Delete
-        tbody
-            each item in userData
+        .table-data
+        h2 Expense List
+        ul 
+         table
+            thead
                 tr
-                    td=item.name
-                    td=item.cost
-                    td=item.category
-                    td 
-                        input.btn.btn-primary(id= item, type='button', value='Delete')
-
-    
+                    th Name
+                    th Cost
+                    th Category
+                    th Delete
+            tbody
+                each item in userData
+                    tr
+                        td=item.name
+                        td=item.cost
+                        td=item.category
+                        td 
+                            form(method='POST' action='/itemDeleted:item')
+                                input.btn.btn-primary(type='submit', value='Delete')
