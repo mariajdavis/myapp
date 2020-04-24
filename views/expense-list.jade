@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  head
+    title Expense List
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    style.
+      table, td, th {
+      border: 1px solid #ddd;
+      text-align: left;
+      }
+      table {
+      border-collapse: collapse;
+      width: 50%;
+      }
+      .table-data{
+      position: relative;
+      left:150px;
+      top:100px;
+      }
+      th, td {
+      padding: 15px;
+      }
+  body
+    .table-data
+      h2 Expense List
+      ul 
+      table
+        thead
+            tr
+                th Name
+                th Cost
+                th Category
+                th Delete
+        tbody
+            each item in userData
+                tr
+                    td=item.name
+                    td=item.cost
+                    td=item.category
+                    td 
+                        input.btn.btn-primary(id= item, type='button', value='Delete')
+
+    

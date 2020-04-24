@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  h1= "Trackr"
+  p Personal Expense Tracker
+  form(method='GET' action='expenses')
+    button(type='submit') View Expenses
+  br
+  br
+  br
+  br
+  br
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h2.display-4.m-b-2 Add Expense
+        // submit expense form
+        form(method='POST' action='/expenseSubmitted')
+          div.form-group
+            input#name.form-control(type='text', placeholder='Name' name='name' value='Name')
+          br
+          div.form-group
+            input#cost.form-control(type='double', placeholder='Cost' name='cost' value='Cost') 
+          br
+          div.form-group 
+            select#category.select.form-control.input-lg(type='text', placeholder='Category' name='category' value = 'category')
+              option(value=Category) Category
+              option(value=Groceries) Groceries
+              option(value=Clothing) Clothing
+              option(value=Entertainment) Entertainment
+              option(value=Housing) Housing
+              option(value=Other) Other
+          br
+          button.btn.btn-primary(type='submit' value='submit') Submit
+          br
+          br
+          br
+          br
+
